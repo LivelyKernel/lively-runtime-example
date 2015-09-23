@@ -14,3 +14,6 @@ run.`
 4. When project files are changed using Lively's text editor and
 `lively-runtime.js` defines a file handler for a file, this handler will be
 called and can then define how to re-load the changed file.
+
+5. The doit context in the text editor will be set to whatever the
+`getDoitContext()` method of the lively.lang.Runtime project returns.
