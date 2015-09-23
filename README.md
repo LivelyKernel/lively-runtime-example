@@ -9,11 +9,11 @@ lively-runtime.js module gets run when you enter a project directory.
 
 3. Then, simply by switching into the project directory, `lively-runtime.js`
 will be loaded. If it adds a project with a `reloadAll` method, this method is
-run.`
+run.
 
 4. When project files are changed using Lively's text editor and
 `lively-runtime.js` defines a file handler for a file, this handler will be
 called and can then define how to re-load the changed file.
 
 5. The doit context in the text editor will be set to whatever the
-`getDoitContext()` method of the lively.lang.Runtime project returns.
+`getDoitContext()` method of the `lively.lang.Runtime` project returns.
