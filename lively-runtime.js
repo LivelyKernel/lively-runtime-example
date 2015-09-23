@@ -7,7 +7,7 @@ lively.require("lively.lang.Runtime").toRun(function() {
     state: {window: {}},
 
     reloadAll: function(project, thenDo) {
-      var files = ["index.js", "lib/foo.js","lib/bar.js", "tests/test-it.js"];
+      var files = ["index.js", "lib/foo.js", "lib/bar.js", "tests/test-it.js"];
       lively.lang.Runtime.loadFiles(project, files, thenDo);
     },
 
@@ -22,11 +22,11 @@ lively.require("lively.lang.Runtime").toRun(function() {
           // project.state.
           project.state.lively = lively;
           // Now let's load the file
-  				lively.lang.Runtime.evalCode(project, change.newSource, project.state, change.resourceId);
-  				// after the code is loaded we might want to export stuff from the project
-  				// into the "real" Global to play around with stuff:
-  				Global["lively-runtime-example"] = project.state.window["lively-runtime-example"];
-  				alertOK(lively.lang.obj.inspect(resource) + " loaded");
+          lively.lang.Runtime.evalCode(project, change.newSource, project.state, change.resourceId);
+          // after the code is loaded we might want to export stuff from the project
+          // into the "real" Global to play around with stuff:
+          Global["lively-runtime-example"] = project.state.window["lively-runtime-example"];
+          alertOK(lively.lang.obj.inspect(resource) + " loaded");
         }
       },
 
@@ -52,7 +52,7 @@ lively.require("lively.lang.Runtime").toRun(function() {
               lively.lang.fun.waitFor(3000, function() { return typeof expect !== "undefined" && expect !== chai.expect; }, next);
             },
             function(next) {
-              lively.lang.obj.extend(project.state, {mocha: Global.mocha,expect: Global.expect});
+              lively.lang.obj.extend(project.state, {mocha: Global.mocha, expect: Global.expect});
               lively.lang.Runtime.evalCode(project, change.newSource, project.state, change.resourceId);
               next();
             }
